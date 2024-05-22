@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PassX</title>
+    <link rel="stylesheet" href="login-style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome To</h1>
+        <h1>Avanta Security Solutions</h1>
+        <div class="form-container">
+            <!-- Login Form -->
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <h2>Login</h2>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required>
+                    <button type="button" class="toggle-password" onclick="togglePasswordVisibility('password')">Show</button>
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+                <p><a href="#" onclick="showForgotPassword()">Forgot Password?</a></p>
+                <p>Don't have an account? <a href="#" onclick="showSignUp()">Sign Up</a></p>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signup-form" onsubmit="handleSignup(event)" style="display: none;">
+                <h2>Sign Up</h2>
+                <label for="new-username">Username:</label>
+                <input type="text" id="new-username" name="username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="new-password">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="new-password" name="password" required>
+                    <button type="button" class="toggle-password" onclick="togglePasswordVisibility('new-password')">Show</button>
+                </div>
+
+                <button type="submit" class="btn">Sign Up</button>
+                <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+            </form>
+
+            <!-- Forgot Password Form -->
+            <form id="forgot-password-form" onsubmit="handleForgotPassword(event)" style="display: none;">
+                <h2>Forgot Password</h2>
+                <label for="forgot-username">Username:</label>
+                <input type="text" id="forgot-username" name="username" required>
+                <button type="submit" class="btn">Recover Password</button>
+                <p><a href="#" onclick="showLogin()">Back to Login</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="login-script.js"></script>
+</body>
+
+</html>
